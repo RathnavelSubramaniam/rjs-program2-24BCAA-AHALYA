@@ -6,5 +6,14 @@ function getMessage(name, age) {
 }
 
 // Don't change the code below
-console.log(getMessage(process.argv[2], process.argv[3]));
+let name = process.argv[2];
+let age = process.argv[3];
+
+if (name === undefined) {
+    const parts = require("fs").readFileSync(0, "utf8").trim().split(",");
+    name = parts[0].trim();
+    age = (parts[1] || "").trim();
+}
+
+console.log(getMessage(name, age));
 module.exports = getMessage;
