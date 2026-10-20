@@ -1,7 +1,8 @@
 // Write a function that returns a message using template literals.
 
 function getMessage(name, age) {
-    return `Hello ${name}, you are ${age} years old.`;
+    const formatted = name.charAt(0).toUpperCase() + name.slice(1);
+    return `Hello ${formatted}, you are ${age} years old.`;
 }
 
 // Don't change the code below
